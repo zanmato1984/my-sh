@@ -48,7 +48,6 @@ alias sall='$SCRIPT_HOME/start_all.sh'
 alias scpinst='$SCRIPT_HOME/scp_install.sh'
 
 alias updtrp='$SCRIPT_HOME/update_repo.sh'
-unalias q
 
 # Locations
 alias gdev='cd $DEVROOT'

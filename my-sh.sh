@@ -10,8 +10,7 @@ elif [ $(uname) = "Linux" ]; then
   export MAVEN_HOME=/opt/apache-maven-3.3.3
   export GOROOT=/usr/local/go
 fi
-export SCRIPT_HOME=script/$MY_SH_DOMAIN
 export SCALA_HOME=/usr/lib/scala-2.11.1
 export GOPATH=$HOME/dev/go
 export GOROOT=/usr/local/go
-export PATH=$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$MAVEN_HOME/bin:$(go env GOPATH)/bin:$GOROOT/bin:$SCRIPT_HOME:$PATH
+export PATH=$MY_SH_HOME/scripts/common:$MY_SH_HOME/scripts/$MY_SH_DOMAIN:$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$MAVEN_HOME/bin:$(go env GOPATH)/bin:$GOROOT/bin:$PATH

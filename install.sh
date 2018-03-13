@@ -23,7 +23,7 @@ sed -i -e "/MY_SH/d" $RC
 sed -i -e "/my-sh.sh/d" $RC
 
 # Set My-SH envs.
-sed -i -e "s,source,export MY_SH_SHELL=$SHELL\nexport MY_SH_DOMAIN=$DOMAIN\nsource," $RC
+sed -i -e "s,source,export MY_SH_HOME=$PWD\nexport MY_SH_SHELL=$SHELL\nexport MY_SH_DOMAIN=$DOMAIN\nsource," $RC
 
 # Source my-sh.sh which has prerequisites of shell plugins defined in domain.
 sed -i -e "s,source,source $PWD/my-sh.sh\nsource," $RC

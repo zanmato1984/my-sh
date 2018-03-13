@@ -49,9 +49,9 @@ if [ $SHELL = "bash" ]; then
   done
 elif [ $SHELL = "zsh" ]; then
   for f in `ls oh-my-zsh/common`; do
-    ln -sf $PWD/oh-my-zsh/common/$f $ZSH/custom/$f
+    ln -sf $PWD/oh-my-zsh/common/$f $ZSH/custom/plugins/$f
   done
   for f in `ls oh-my-zsh/$DOMAIN`; do
-    ln -sf $PWD/oh-my-zsh/$DOMAIN/$f $ZSH/custom/$f
+    ln -sf $PWD/oh-my-zsh/$DOMAIN/$f $ZSH/custom/plugins/$f
   done
 fi

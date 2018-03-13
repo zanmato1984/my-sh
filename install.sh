@@ -13,8 +13,10 @@ SHELL=$1
 DOMAIN=$2
 if [ $SHELL = "bash" ]; then
   RC="$HOME/.bashrc"
+  SHELL_ENV='$BASH_IT'
 elif [ $SHELL = "zsh" ]; then
   RC="$HOME/.zshrc"
+  SHELL_ENV='$ZSH'
 fi
 PWD=`pwd`
 
@@ -22,11 +24,11 @@ PWD=`pwd`
 sed -i -e "/MY_SH/d" $RC
 sed -i -e "/my-sh.sh/d" $RC
 
-# Set My-SH envs.
-sed -i -e "s,source,export MY_SH_HOME=$PWD\nexport MY_SH_SHELL=$SHELL\nexport MY_SH_DOMAIN=$DOMAIN\nsource," $RC
+## Set My-SH envs.
+sed -i -e "s,source $SHELL_ENV,export MY_SH_HOME=$PWD\nexport MY_SH_SHELL=$SHELL\nexport MY_SH_DOMAIN=$DOMAIN\nsource $SHELL_ENV," $RC
 
 # Source my-sh.sh which has prerequisites of shell plugins defined in domain.
-sed -i -e "s,source,source $PWD/my-sh.sh\nsource," $RC
+sed -i -e "s,source $SHELL_ENV,source $PWD/my-sh.sh\nsource $SHELL_ENV," $RC
 
 # Input rc.
 ln -sf $PWD/input/inputrc $HOME/.inputrc

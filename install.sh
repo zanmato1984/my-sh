@@ -18,6 +18,16 @@ elif [ $SHELL = "zsh" ]; then
 fi
 PWD=`pwd`
 
+# Some clean-up ahead.
+sed -i -e "/MY_SH/d" $RC
+sed -i -e "/my-sh.sh/d" $RC
+
+# Set My-SH envs.
+sed -i -e "s,source,export MY_SH_SHELL=$SHELL\nexport MY_SH_DOMAIN=$DOMAIN\nsource," $RC
+
+# Source my-sh.sh which has prerequisites of shell plugins defined in domain.
+sed -i -e "s,source,source $PWD/my-sh.sh\nsource," $RC
+
 # Input rc.
 ln -sf $PWD/input/inputrc $HOME/.inputrc
 
@@ -45,7 +55,3 @@ elif [ $SHELL = "zsh" ]; then
     ln -sf $PWD/oh-my-zsh/$DOMAIN/$f $ZSH/custom/$f
   done
 fi
-
-# Source my-sh.sh which has prerequisites of shell plugins defined in domain.
-sed -i -e "/my-sh.sh/d" $RC
-sed -i -e "s,source,source $PWD/my-sh.sh\nsource," $RC

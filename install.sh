@@ -50,6 +50,8 @@ if [ $SHELL = "bash" ]; then
     ln -sf $PWD/bash-it/$DOMAIN/$f $BASH_IT/custom/$f
   done
 elif [ $SHELL = "zsh" ]; then
+  rm -rf $ZSH/custom/plugins/common &> /dev/null 
   ln -sf $PWD/oh-my-zsh/common $ZSH/custom/plugins/common
+  rm -rf $ZSH/custom/plugins/$DOMAIN &> /dev/null 
   ln -sf $PWD/oh-my-zsh/$DOMAIN $ZSH/custom/plugins/$DOMAIN
 fi

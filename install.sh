@@ -48,10 +48,6 @@ if [ $SHELL = "bash" ]; then
     ln -sf $PWD/bash-it/$DOMAIN/$f $BASH_IT/custom/$f
   done
 elif [ $SHELL = "zsh" ]; then
-  for f in `ls oh-my-zsh/common`; do
-    ln -sf $PWD/oh-my-zsh/common/$f $ZSH/custom/plugins/$f
-  done
-  for f in `ls oh-my-zsh/$DOMAIN`; do
-    ln -sf $PWD/oh-my-zsh/$DOMAIN/$f $ZSH/custom/plugins/$f
-  done
+  ln -sf $PWD/oh-my-zsh/common $ZSH/custom/plugins/common
+  ln -sf $PWD/oh-my-zsh/$DOMAIN $ZSH/custom/plugins/$DOMAIN
 fi

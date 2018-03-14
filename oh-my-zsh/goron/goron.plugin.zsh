@@ -4,7 +4,6 @@ if [ "$JAVA_VERSION" = "8" ]; then
 else
   export MAVEN_OPTS="-Xmx8192m -XX:MaxPermSize=2048m"
 fi
-export SCRIPT_HOME=$BASH_IT/script
 
 # Inceptor
 export HIVEROOT=hive-0.12.0-transwarp
@@ -23,10 +22,8 @@ export MYSQL_FLAVOR=MySQL56
 if [ $(uname) = "Darwin" ]; then
   export VT_MYSQL_ROOT=/usr/local/opt/mysql56
 fi
-export VTROOT=$HOME_ABS/dev/go
-export VTDATAROOT=$HOME_ABS/dev/go/vtdataroot
-
-alias sudo='sudo -E '
+export VTROOT=$HOME/dev/go
+export VTDATAROOT=$HOME/dev/go/vtdataroot
 
 # Inceptor Scripts
 alias rfricpt='touch $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar'
@@ -40,8 +37,8 @@ alias sbl='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hive.beeline.
 alias shsv2='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh io.transwarp.inceptor.InceptorServer2 &'
 alias shsv2m='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh io.transwarp.inceptor.InceptorServer2 --hiveconf hive.metastore.uris=thrift://localhost:9083 &'
 alias sbl2='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive2://localhost:10000/default -n zhu -p 123456'
-alias player='java -cp $HOME_ABS/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.player.SuiteRunner'
-alias avro='java -cp $HOME_ABS/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.tools.AvroReader'
+alias player='java -cp $HOME/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.player.SuiteRunner'
+alias avro='java -cp $HOME/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.tools.AvroReader'
 
 alias sall='$SCRIPT_HOME/start_all.sh'
 
@@ -60,12 +57,10 @@ alias msqld='mysqld_safe &'
 alias msql='mysql -uroot -ppassword hive_metastore'
 alias hbase='/usr/lib/hbase/bin/hbase shell'
 
-alias tbsht='$SCRIPT_HOME/bashit.tmux.sh'
-alias ticpt='$SCRIPT_HOME/inceptor.tmux.sh'
-alias twtdp='$SCRIPT_HOME/waterdrop.tmux.sh'
-alias tkdb='$SCRIPT_HOME/kundb.tmux.sh'
-
-alias icv='iconv -f gbk -t utf-8'
+alias tbsht='bashit.tmux.sh'
+alias ticpt='inceptor.tmux.sh'
+alias twtdp='waterdrop.tmux.sh'
+alias tkdb='kundb.tmux.sh'
 
 alias clhbs='rm -rf ~/.m2/repository/org/apache/hbase ~/.ivy2/cache/org.apache.hbase'
 alias clhv='rm -rf ~/.m2/repository/org/apache/hive ~/.ivy2/local/org.apache.hive ~/.ivy2/local/org.apache.hive.shims ~/.ivy2/cache/org.apache.hive ~/.ivy2/cache/org.apache.hive.shims'
@@ -93,4 +88,51 @@ alias instspk='rm -rf $DEVROOT/precheck/jar/spark/*; cp $DEVROOT/$NGMRROOT/spark
 alias instidbc='rm -rf $DEVROOT/precheck/jar/idbc/*; cp $DEVROOT/$NGMRROOT/idbc/core/target/scala-2.10/idbc-core-1.0.0-transwarp.jar $DEVROOT/$NGMRROOT/idbc/hyperdrive/target/scala-2.10/hyperdrive-1.0.0-transwarp.jar $DEVROOT/$NGMRROOT/idbc/jdbc/target/scala-2.10/jdbcdrive-1.0.0-transwarp.jar $DEVROOT/precheck/jar/idbc/'
 alias insticpt='rm -rf $DEVROOT/precheck/jar/inceptor/*; cp $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/precheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar'
 
-alias svndiff='svn diff --diff-cmd=diff -x -U999999'
+function sce ()
+{
+  sfp $DEVROOT/inceptor_idea/sql/e.sql
+}
+
+function ccf ()
+{
+  cfp $*
+  echo "source `clippst`" > $DEVROOT/inceptor_idea/sql/f.sql
+  echo "`clippst` sourced to $DEVROOT/inceptor_idea/sql/f.sql"
+}
+
+function scf ()
+{
+  sfp $*
+  echo "source `selpst`" > $DEVROOT/inceptor_idea/sql/f.sql
+  echo "`selpst` sourced to $DEVROOT/inceptor_idea/sql/f.sql"
+}
+
+function warp ()
+{
+  export HIVE_BR=$SVN_ROOT/sbranches/ruoxi/warp-$1/hive-0.12.0-transwarp
+  export NGMR_BR=$SVN_ROOT/sbranches/ruoxi/warp-$1/ngmr-1.7-transwarp
+  export INCEPTOR_BR=$SVN_ROOT/sbranches/ruoxi/warp-$1/inceptor_idea
+}
+
+function rlbr ()
+{
+  export HIVE_BR=$SVN_ROOT/release_branches/transwarp-$1/hadoop/sources/hive-0.12.0-transwarp
+  export NGMR_BR=$SVN_ROOT/release_branches/transwarp-$1/hadoop/sources/ngmr-1.7-transwarp
+  export INCEPTOR_BR=$SVN_ROOT/release_branches/transwarp-$1/hadoop/sources/inceptor_idea
+}
+
+function devroot ()
+{
+  rm $DEVROOT
+  ln -sf $1 $DEVROOT
+}
+
+function dsnst ()
+{
+  sed -i "s/-SNAPSHOT//g" `find . -not -type d`
+}
+
+function bpvs ()
+{
+  sed -i "s/$1/$2/g" `find . -not -type d -and \( -name "*.java" -or -name "*.xml" -or -name "*.MF" -or -name "*.properties" -or -name "*.product" -or -name "*.sh" -or -name "*.md" \)`
+}

@@ -1,40 +1,14 @@
-# Envs
-
-# stty -ixon -ixoff
-
-if [ $(uname) = "Darwin" ]; then
-  export HOME_ABS=/Users/zanmato
-  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-  export JAVA_VERSION=7
-  export MAVEN_HOME=/opt/apache-maven-3.3.3
-  export GOROOT=/usr/local/opt/go/libexec
-  export GODEBUG=netdns=go
-elif [ $(uname) = "Linux" ]; then
-  export HOME_ABS=/home/ruoxi
-  export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-  export JAVA_VERSION=7
-  export MAVEN_HOME=/opt/apache-maven-3.3.3
-  export GOROOT=/usr/local/go
-fi
-export DEVROOT=$HOME_ABS/.devroot
+export DEVROOT=$HOME/.devroot
 if [ "$JAVA_VERSION" = "8" ]; then
   export MAVEN_OPTS="-Xmx8192m"
 else
   export MAVEN_OPTS="-Xmx8192m -XX:MaxPermSize=2048m"
 fi
-export SCRIPT_HOME=$BASH_IT/script
-export SCALA_HOME=/usr/lib/scala-2.11.1
-export GOPATH=$HOME_ABS/dev/go
-export GOROOT=/usr/local/go
-export PATH=$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$MAVEN_HOME/bin:$(go env GOPATH)/bin:$GOROOT/bin:$PATH
 
 # Inceptor
-export HADOOP_HOME=/usr/lib/hadoop
-export HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec
 export HIVEROOT=hive-0.12.0-transwarp
 export NGMRROOT=ngmr-1.7-transwarp
 export INCEPTORIDEAROOT=inceptor_idea
-export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 export INCEPTOR_SERVER=localhost
 
@@ -48,13 +22,8 @@ export MYSQL_FLAVOR=MySQL56
 if [ $(uname) = "Darwin" ]; then
   export VT_MYSQL_ROOT=/usr/local/opt/mysql56
 fi
-export VTROOT=$HOME_ABS/dev/go
-export VTDATAROOT=$HOME_ABS/dev/go/vtdataroot
-
-export EDITOR='vi'
-export GIT_EDITOR='vi'
-
-alias sudo='sudo -E '
+export VTROOT=$HOME/dev/go
+export VTDATAROOT=$HOME/dev/go/vtdataroot
 
 # Inceptor Scripts
 alias rfricpt='touch $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar'
@@ -68,15 +37,14 @@ alias sbl='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hive.beeline.
 alias shsv2='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh io.transwarp.inceptor.InceptorServer2 &'
 alias shsv2m='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh io.transwarp.inceptor.InceptorServer2 --hiveconf hive.metastore.uris=thrift://localhost:9083 &'
 alias sbl2='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive2://localhost:10000/default -n zhu -p 123456'
-alias player='java -cp $HOME_ABS/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.player.SuiteRunner'
-alias avro='java -cp $HOME_ABS/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.tools.AvroReader'
+alias player='java -cp $HOME/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.player.SuiteRunner'
+alias avro='java -cp $HOME/dev/player/build/libs/player-1.0-all.jar io.transwarp.qa.tools.AvroReader'
 
 alias sall='$SCRIPT_HOME/start_all.sh'
 
 alias scpinst='$SCRIPT_HOME/scp_install.sh'
 
 alias updtrp='$SCRIPT_HOME/update_repo.sh'
-unalias q
 
 # Locations
 alias gdev='cd $DEVROOT'
@@ -85,21 +53,14 @@ alias ghv='cd $DEVROOT/$HIVEROOT/src'
 alias gngmr='cd $DEVROOT/$NGMRROOT'
 
 # Commands
-alias tmux='tmux -2' 
-alias tls='tmux ls' 
-alias tat='tmux a -t' 
-alias tns='tmux new-session -s'
-
 alias msqld='mysqld_safe &'
 alias msql='mysql -uroot -ppassword hive_metastore'
 alias hbase='/usr/lib/hbase/bin/hbase shell'
 
-alias tbsht='$SCRIPT_HOME/bashit.tmux.sh'
-alias ticpt='$SCRIPT_HOME/inceptor.tmux.sh'
-alias twtdp='$SCRIPT_HOME/waterdrop.tmux.sh'
-alias tkdb='$SCRIPT_HOME/kundb.tmux.sh'
-
-alias icv='iconv -f gbk -t utf-8'
+alias tbsht='bashit.tmux.sh'
+alias ticpt='inceptor.tmux.sh'
+alias twtdp='waterdrop.tmux.sh'
+alias tkdb='kundb.tmux.sh'
 
 alias clhbs='rm -rf ~/.m2/repository/org/apache/hbase ~/.ivy2/cache/org.apache.hbase'
 alias clhv='rm -rf ~/.m2/repository/org/apache/hive ~/.ivy2/local/org.apache.hive ~/.ivy2/local/org.apache.hive.shims ~/.ivy2/cache/org.apache.hive ~/.ivy2/cache/org.apache.hive.shims'
@@ -126,5 +87,3 @@ alias insthv='rm -rf $DEVROOT/precheck/jar/hive/*; cp `find $DEVROOT/$HIVEROOT/s
 alias instspk='rm -rf $DEVROOT/precheck/jar/spark/*; cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/precheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/precheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar'
 alias instidbc='rm -rf $DEVROOT/precheck/jar/idbc/*; cp $DEVROOT/$NGMRROOT/idbc/core/target/scala-2.10/idbc-core-1.0.0-transwarp.jar $DEVROOT/$NGMRROOT/idbc/hyperdrive/target/scala-2.10/hyperdrive-1.0.0-transwarp.jar $DEVROOT/$NGMRROOT/idbc/jdbc/target/scala-2.10/jdbcdrive-1.0.0-transwarp.jar $DEVROOT/precheck/jar/idbc/'
 alias insticpt='rm -rf $DEVROOT/precheck/jar/inceptor/*; cp $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/precheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar'
-
-alias svndiff='svn diff --diff-cmd=diff -x -U999999'

@@ -18,6 +18,11 @@ elif [ $SHELL = "zsh" ]; then
   RC="$HOME/.zshrc"
   SHELL_ENV='$ZSH'
 fi
+if [ $(uname) = "Darwin" ]; then
+  NEW_LINE=$'\n'
+elif [ $(uname) = "Linux" ]; then
+  NEW_LINE='n'
+fi
 PWD=`pwd`
 
 # Some clean-up ahead.
@@ -25,10 +30,10 @@ sed -i -e "/MY_SH/d" $RC
 sed -i -e "/my-sh.sh/d" $RC
 
 ## Set My-SH envs.
-sed -i -e "s,source $SHELL_ENV,export MY_SH_HOME=$PWD"'\'$'\n'"export MY_SH_SHELL=$SHELL"'\'$'\n'"export MY_SH_DOMAIN=$DOMAIN"'\'$'\n'"source $SHELL_ENV," $RC
+sed -i -e "s,source $SHELL_ENV,export MY_SH_HOME=$PWD\\${NEW_LINE}export MY_SH_SHELL=$SHELL\\${NEW_LINE}export MY_SH_DOMAIN=$DOMAIN\\${NEW_LINE}source $SHELL_ENV," $RC
 
 # Source my-sh.sh which has prerequisites of shell plugins defined in domain.
-sed -i -e "s,source $SHELL_ENV,source $PWD/my-sh.sh"'\'$'\n'"source $SHELL_ENV," $RC
+sed -i -e "s,source $SHELL_ENV,source $PWD/my-sh.sh\\${NEW_LINE}source $SHELL_ENV," $RC
 
 # Input rc.
 ln -sf $PWD/input/inputrc $HOME/.inputrc

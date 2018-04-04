@@ -87,14 +87,21 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x63-0xc0000</key>
+		<key>0x63-0x140000</key>
 		<dict>
 			<key>Action</key>
 			<integer>22</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x7f-0xc0000</key>
+		<key>0x66-0xc0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>23</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x7f-0x140000</key>
 		<dict>
 			<key>Action</key>
 			<integer>22</integer>
@@ -115,14 +122,7 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xd-0xc0000</key>
-		<dict>
-			<key>Action</key>
-			<integer>22</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
-		<key>0xf700-0x2c0000</key>
+		<key>0xd-0x140000</key>
 		<dict>
 			<key>Action</key>
 			<integer>22</integer>
@@ -136,7 +136,7 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf701-0x2c0000</key>
+		<key>0xf700-0x340000</key>
 		<dict>
 			<key>Action</key>
 			<integer>22</integer>
@@ -150,7 +150,7 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf702-0x2c0000</key>
+		<key>0xf701-0x340000</key>
 		<dict>
 			<key>Action</key>
 			<integer>22</integer>
@@ -171,7 +171,7 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf703-0x2c0000</key>
+		<key>0xf702-0x340000</key>
 		<dict>
 			<key>Action</key>
 			<integer>22</integer>
@@ -189,6 +189,13 @@
 		<dict>
 			<key>Action</key>
 			<integer>34</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x340000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -311,7 +318,7 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1526 278 796 473 1440 -180 1920 1058 </string>
+	<string>1745 129 796 473 1440 -180 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>691 143 585 452 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1279,9 +1286,11 @@
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.40000000596046448</real>
 	<key>SwitchTabModifier</key>
-	<integer>5</integer>
+	<integer>9</integer>
 	<key>SwitchWindowModifier</key>
-	<integer>6</integer>
+	<integer>9</integer>
+	<key>TabStyle</key>
+	<integer>0</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>

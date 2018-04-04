@@ -87,6 +87,20 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x63-0xc0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x7f-0xc0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0x9-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -101,6 +115,20 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xd-0xc0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf700-0x2c0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
 			<key>Action</key>
@@ -108,10 +136,24 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xf701-0x2c0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0xf701-0x300000</key>
 		<dict>
 			<key>Action</key>
 			<integer>6</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf702-0x2c0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -126,6 +168,13 @@
 		<dict>
 			<key>Action</key>
 			<integer>33</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x2c0000</key>
+		<dict>
+			<key>Action</key>
+			<integer>22</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -262,7 +311,7 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1934 281 796 473 1440 -180 1920 1080 </string>
+	<string>1526 278 796 473 1440 -180 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>691 143 585 452 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -717,13 +766,6 @@
 					<key>Text</key>
 					<string>[1;3A</string>
 				</dict>
-				<key>0xf700-0x2c0000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;7A</string>
-				</dict>
 				<key>0xf701-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -744,13 +786,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;3B</string>
-				</dict>
-				<key>0xf701-0x2c0000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;7B</string>
 				</dict>
 				<key>0xf702-0x220000</key>
 				<dict>
@@ -773,13 +808,6 @@
 					<key>Text</key>
 					<string>[1;3D</string>
 				</dict>
-				<key>0xf702-0x2c0000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;7D</string>
-				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -800,13 +828,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;3C</string>
-				</dict>
-				<key>0xf703-0x2c0000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;7C</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>

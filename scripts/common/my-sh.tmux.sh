@@ -24,5 +24,8 @@ tmux split-window -v
 tmux send-keys "cd" "C-m"
 tmux select-pane -t 1
 
+tmux new-window -n scripts
+tmux send-keys "cd $MY_SH_HOME/scripts" "C-m"
+
 tmux select-window -t 1
 tmux a -t my-sh

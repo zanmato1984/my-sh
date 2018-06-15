@@ -1,6 +1,6 @@
 #!/bin/sh
 
-tmux new-session -d -s binlog2 -n service
+tmux new-session -d -s binlog -n service
 tmux send-keys "cd $GOPATH/src/github.com/pingcap/pd" "C-m"
 tmux split-window
 tmux send-keys "cd $HOME/dev/kafka-docker" "C-m"
@@ -39,4 +39,4 @@ tmux send-keys "cd $HOME/dev/theflash/benchmark" "C-m"
 tmux select-pane -t 1
 
 tmux select-window -t 1
-tmux a -t binlog2
+tmux a -t binlog

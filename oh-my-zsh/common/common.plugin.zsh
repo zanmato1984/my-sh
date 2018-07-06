@@ -76,3 +76,15 @@ function jpk ()
     jps | grep $arg | awk '{print $1}' | xargs kill -9
   done
 }
+
+function proxy ()
+{
+  export http_proxy=http://127.0.0.1:1087
+  export https_proxy=http://127.0.0.1:1087
+}
+
+function unproxy ()
+{
+  unset http_proxy
+  unset https_proxy
+}

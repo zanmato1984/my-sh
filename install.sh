@@ -46,10 +46,6 @@ ln -sf $PWD/vim/vimrc $HOME/.vrapperrc
 # Tmux conf.
 ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
 
-# Proxychains conf.
-mkdir $HOME/.proxychains
-ln -sf $PWD/proxychains/proxychains.conf $HOME/.proxychains/proxychains.conf
-
 # Shell plugins.
 if [ $SHELL = "bash" ]; then
   for f in `ls bash-it/common`; do

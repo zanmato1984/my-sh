@@ -1,0 +1,19 @@
+Host uc
+  User root
+  HostName 120.132.23.9
+
+Host tidb136
+  User tidb
+  HostName 172.16.10.136
+
+Host tidb137
+  User tidb
+  HostName 172.16.10.137
+
+Host tidb138
+  User tidb
+  HostName 172.16.10.138
+
+Host tidb139
+  User tidb
+  HostName 172.16.10.139

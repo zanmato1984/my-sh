@@ -46,6 +46,9 @@ ln -sf $PWD/vim/vimrc $HOME/.vrapperrc
 # Tmux conf.
 ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
 
+# SSH conf.
+ln -sf $PWD/ssh/$DOMAIN/config $HOME/.ssh/config
+
 # Shell plugins.
 if [ $SHELL = "bash" ]; then
   for f in `ls bash-it/common`; do

@@ -4,16 +4,20 @@ Host uc
 
 Host tidb136
   User tidb
+  IdentityFile ~/.ssh/tidb.pem
   HostName 172.16.10.136
 
 Host tidb137
   User tidb
+  IdentityFile ~/.ssh/tidb.pem
   HostName 172.16.10.137
 
 Host tidb138
   User tidb
+  IdentityFile ~/.ssh/tidb.pem
   HostName 172.16.10.138
 
 Host tidb139
   User tidb
+  IdentityFile ~/.ssh/tidb.pem
   HostName 172.16.10.139

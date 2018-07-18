@@ -1,24 +1,12 @@
 #!/bin/sh
 
-tmux new-session -d -s binlog -n service
-tmux send-keys "cd $GOPATH/src/github.com/pingcap/pd" "C-m"
+tmux new-session -d -s binlog -n algernon
+tmux send-keys "cd $HOME/dev/algernon" "C-m"
 tmux split-window
-tmux send-keys "cd $HOME/dev/kafka-docker" "C-m"
-tmux select-pane -t 1
+tmux send-keys "cd $HOME/dev/algernon/data" "C-m"
 tmux split-window -h
-tmux send-keys "cd $HOME/dev/tikv" "C-m"
+tmux send-keys "cd $HOME/dev/algernon/log" "C-m"
 tmux select-pane -t 3
-tmux split-window -h
-tmux send-keys "cd /data" "C-m"
-tmux select-pane -t 1
-
-tmux new-window -n tidb
-tmux send-keys "cd $GOPATH/src/github.com/pingcap/tidb-binlog" "C-m"
-tmux split-window
-tmux select-pane -t 1
-tmux split-window -h
-tmux send-keys "cd $GOPATH/src/github.com/pingcap/tidb" "C-m"
-tmux select-pane -t 1
 
 tmux new-window -n ch
 tmux send-keys "cd $HOME/dev/theflash/benchmark" "C-m"

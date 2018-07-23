@@ -6,7 +6,10 @@ tmux split-window
 tmux send-keys "cd $HOME/dev/algernon/data" "C-m"
 tmux split-window -h
 tmux send-keys "cd $HOME/dev/algernon/log" "C-m"
-tmux select-pane -t 3
+tmux select-pane -t 1
+tmux split-window -h
+tmux send-keys "cd $HOME/dev/algernon" "C-m"
+tmux select-pane -t 1
 
 tmux new-window -n ch
 tmux send-keys "cd $HOME/dev/theflash/benchmark" "C-m"

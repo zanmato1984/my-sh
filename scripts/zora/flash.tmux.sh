@@ -12,7 +12,10 @@ tmux select-pane -t 1
 tmux new-window -n spark
 tmux send-keys "cd $HOME/dev/theflash/computing" "C-m"
 
-tmux new-window -n spark-debug
+tmux new-window -n spark-run
+tmux send-keys "cd $HOME/dev/theflash/computing" "C-m"
+
+tmux new-window -n benchmark
 tmux send-keys "cd $HOME/dev/theflash/benchmark/sql-spark" "C-m"
 tmux split-window
 tmux send-keys "cd $HOME/dev/theflash/benchmark" "C-m"

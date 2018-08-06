@@ -1,3 +1,7 @@
+Host gcp
+  User zanmato
+  HostName 35.189.131.242
+
 Host uc
   User root
   HostName 120.132.23.9

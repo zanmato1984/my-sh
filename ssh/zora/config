@@ -27,3 +27,19 @@ Host tidb139
   User tidb
   IdentityFile ~/.ssh/tidb.pem
   HostName 172.16.10.139
+
+Host idc81
+  User root
+  HostName 172.16.30.81
+
+Host idc85
+  User root
+  HostName 172.16.30.85
+
+Host idc90
+  User root
+  HostName 172.16.30.90
+
+Host idc92
+  User root
+  HostName 172.16.30.92

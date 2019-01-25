@@ -3,7 +3,7 @@
 tmux new-session -d -s binlog -n algernon
 tmux send-keys "cd $HOME/dev/algernon" "C-m"
 tmux split-window
-tmux send-keys "cd $HOME/dev/algernon/data" "C-m"
+tmux send-keys "cd $HOME/dev/algernon" "C-m"
 tmux split-window -h
 tmux send-keys "cd $HOME/dev/algernon/log" "C-m"
 tmux select-pane -t 1

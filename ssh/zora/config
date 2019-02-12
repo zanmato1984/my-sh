@@ -2,7 +2,7 @@ ServerAliveInterval 120
 
 Host gcp
   User zanmato
-  HostName 35.189.131.242
+  HostName 35.200.11.106
 
 Host uc
   User root

@@ -35,4 +35,4 @@ tmux new-window -n tidb
 tmux send-keys "cd $HOME/dev/algernon" "C-m"
 
 tmux select-window -t 1
-tmux a -t flash
+tmux a -t tiflash

@@ -1,3 +1,5 @@
+unsetopt share_history
+
 alias tmux='tmux -2' 
 alias tls='tmux ls' 
 alias tat='tmux a -t' 

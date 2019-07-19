@@ -19,14 +19,9 @@ else
   " something for console Vim
 endif
 
-"set background=dark
-"colorscheme base16-eighties
-"let base16colorspace=256  " Access colors present in 256 colorspace
-
 set cin
 set cino=:0g0t0
 set autoindent
-"set mouse=a
 set ic
 
 set nu
@@ -35,8 +30,6 @@ nmap <F8> :set number! number?<CR>
 nmap <F9> :set invpaste paste?<CR>
 set pastetoggle=<F9>
 set showmode
-
-"set t_ti= t_te=
 
 nmap gp :bp<cr>
 nmap gn :bn<cr>
@@ -48,7 +41,4 @@ nmap gl <C-W>l
 imap jj <Esc>
 map <Space> :
 
-nmap gs :let @*=expand("%:p")<CR>
-nmap gc :let @+=expand("%:p")<CR>
-
-":autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+set clipboard=unnamed

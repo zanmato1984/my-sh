@@ -210,6 +210,13 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xf710-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>41</integer>
+			<key>Text</key>
+			<string>{"ConvertUnicodePunctuation":true,"WaitForPrompts":false,"Substitution":"","EscapeForShell":false,"Base64":false,"TabStopSize":4,"Delay":0.01,"RemoveNewlines":false,"Regex":"","ConvertNewlines":true,"TabTransform":0,"BracketAllowed":true,"UseRegexSubstitution":false,"ChunkSize":1024,"RemoveControls":true}</string>
+		</dict>
 		<key>0xf729-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -335,9 +342,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2090 319 620 392 1440 -180 1920 1058 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>277 243 796 486 0 0 1440 877 </string>
+	<string>1880 348 796 486 1440 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>608 421 585 452 0 0 1440 900 </string>
+	<string>608 421 585 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2090 210 585 452 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1382,7 +1389,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-07-26T09:27:51Z</date>
+	<date>2019-07-29T09:08:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

@@ -43,3 +43,7 @@ Host idc90
 Host idc92
   User root
   HostName 172.16.30.92
+
+Host idc59
+  User root
+  HostName 172.16.5.59

@@ -1,11 +1,19 @@
 if [ $(uname) = "Darwin" ]; then
   export JAVA_HOME=`/usr/libexec/java_home`
-  export GODEBUG=netdns=go
 elif [ $(uname) = "Linux" ]; then
-  export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+  export JAVA_HOME=/usr/lib/jvm/default-java
 fi
-# export SCALA_HOME=/usr/lib/scala-2.11.1
-export GOROOT=/usr/local/opt/go/libexec
+
 export GOPATH=$HOME/dev/go
-export PATH=$MY_SH_HOME/scripts/common:$MY_SH_HOME/scripts/$MY_SH_DOMAIN:$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$MAVEN_HOME/bin:$(go env GOPATH)/bin:$GOROOT/bin:/usr/local/opt/llvm/bin:/usr/local/bin:$PATH
+
 export LC_ALL=en_US.UTF-8
+
+# CUDA
+export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/nsight-compute-2019.5.0${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# Languages
+export PATH=$JAVA_HOME:$JAVA_HOME/bin:$(go env GOPATH)/bin:$(go env GOROOT)/bin:/usr/local/bin:$PATH
+
+# My-SH
+export PATH=$MY_SH_HOME/scripts/common:$MY_SH_HOME/scripts/$MY_SH_DOMAIN:$PATH

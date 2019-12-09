@@ -51,3 +51,8 @@ Host idc59
 Host turing
   User zanmato
   HostName 192.168.2.20
+
+Host turing-frp
+  User zanmato
+  HostName 35.220.223.52
+  Port 1109

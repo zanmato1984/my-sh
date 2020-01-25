@@ -3,7 +3,7 @@ ServerAliveInterval 120
 # Personal
 Host gcp
   User zanmato
-  HostName 35.220.223.52
+  HostName 34.92.84.255
 
 Host gcp-zt
   User zanmato

@@ -27,42 +27,18 @@ Host uc
   User root
   HostName 120.132.23.9
 
-Host tidb136
-  User tidb
-  IdentityFile ~/.ssh/tidb.pem
-  HostName 172.16.10.136
-
-Host tidb137
-  User tidb
-  IdentityFile ~/.ssh/tidb.pem
-  HostName 172.16.10.137
-
-Host tidb138
-  User tidb
-  IdentityFile ~/.ssh/tidb.pem
-  HostName 172.16.10.138
-
-Host tidb139
-  User tidb
-  IdentityFile ~/.ssh/tidb.pem
-  HostName 172.16.10.139
-
-Host idc81
-  User root
-  HostName 172.16.30.81
-
-Host idc85
-  User root
-  HostName 172.16.30.85
-
-Host idc90
-  User root
-  HostName 172.16.30.90
-
-Host idc92
-  User root
-  HostName 172.16.30.92
-
 Host idc59
   User root
   HostName 172.16.5.59
+
+Host idc81
+  User root
+  HostName 172.16.5.81
+
+Host idc82
+  User root
+  HostName 172.16.5.82
+
+Host idc85
+  User root
+  HostName 172.16.5.85

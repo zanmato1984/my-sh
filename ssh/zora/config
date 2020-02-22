@@ -3,7 +3,7 @@ ServerAliveInterval 120
 # Personal
 Host gcp
   User zanmato
-  HostName 34.92.84.255
+  HostName zanmato1984.com
 
 Host gcp-zt
   User zanmato
@@ -19,7 +19,7 @@ Host turing-zt
 
 Host turing-frp
   User zanmato
-  HostName 35.220.223.52
+  HostName zanmato1984.com
   Port 1109
 
 # Company

@@ -1,5 +1,5 @@
 if [ $(uname) = "Darwin" ]; then
-  export JAVA_HOME=`/usr/libexec/java_home`
+  export JAVA_HOME=/usr/local/opt/openjdk
 elif [ $(uname) = "Linux" ]; then
   export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 fi

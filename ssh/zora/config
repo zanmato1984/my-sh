@@ -9,6 +9,16 @@ Host gcp-zt
   User zanmato
   HostName 172.30.1.1
 
+Host bwg
+  User root
+  HostName 80.251.218.219
+  Port 29237
+
+Host bwg-zt
+  User root
+  HostName 172.30.1.2
+  Port 29237
+
 Host turing
   User zanmato
   HostName 192.168.2.20

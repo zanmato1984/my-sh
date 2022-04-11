@@ -1,9 +1,14 @@
 #!/bin/sh
 
 tmux new-session -d -s mapd -n scratch
-tmux send-keys "cd $HOME/dev/omniscidb/build" "C-m"
+tmux send-keys "cd $SCRATCH/workspace" "C-m"
+tmux split-window -h
+tmux send-keys "cd $SCRATCH/workspace" "C-m"
 tmux split-window
-tmux send-keys "cd $HOME/dev/omniscidb/build" "C-m"
+tmux send-keys "cd $SCRATCH/workspace" "C-m"
+tmux select-pane -t 1
+tmux split-window
+tmux send-keys "cd $SCRATCH/workspace" "C-m"
 tmux select-pane -t 1
 
 tmux new-window -n mapd

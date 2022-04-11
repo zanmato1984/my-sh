@@ -1,9 +1,13 @@
 ServerAliveInterval 120
 
 # Personal
-Host gcp
+Host zanmato1984
   User zanmato
   HostName zanmato1984.com
+
+Host gcp
+  User zanmato
+  HostName 35.220.155.181
 
 Host gcp-zt
   User zanmato
@@ -19,36 +23,35 @@ Host bwg-zt
   HostName 172.30.1.2
   Port 29237
 
+Host nerv
+  User zanmato
+  HostName 192.168.2.1
+
+Host nerv-zt
+  User zanmato
+  HostName 172.30.2.1
+
 Host turing
   User zanmato
   HostName 192.168.2.20
 
 Host turing-zt
   User zanmato
-  HostName 172.30.1.20
-
-Host turing-frp
-  User zanmato
-  HostName zanmato1984.com
-  Port 1109
+  HostName 172.30.2.20
 
 # Company
-Host uc
-  User root
-  HostName 120.132.23.9
+Host idc39
+  User zanmato
+  HostName 172.16.4.39
 
-Host idc59
-  User root
-  HostName 172.16.5.59
+Host idc42
+  User zanmato
+  HostName 172.16.4.42
 
-Host idc81
-  User root
-  HostName 172.16.5.81
+Host idc79
+  User zanmato
+  HostName 172.16.4.79
 
-Host idc82
-  User root
-  HostName 172.16.5.82
-
-Host idc85
-  User root
-  HostName 172.16.5.85
+Host idc99
+  User zanmato
+  HostName 172.16.4.99

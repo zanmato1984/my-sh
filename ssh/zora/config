@@ -7,7 +7,7 @@ Host zanmato1984
 
 Host gcp
   User zanmato
-  HostName 35.220.155.181
+  HostName 35.220.183.110
 
 Host gcp-zt
   User zanmato

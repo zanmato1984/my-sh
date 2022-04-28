@@ -15,7 +15,7 @@ Host gcp-zt
 
 Host bwg
   User root
-  HostName 80.251.218.219
+  HostName 80.251.218.237
   Port 29237
 
 Host bwg-zt

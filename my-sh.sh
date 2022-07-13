@@ -1,5 +1,10 @@
 export LC_ALL=en_US.UTF-8
 
+# Homebrew
+if [ $(uname) = "Darwin" ]; then
+  export PATH=/opt/homebrew/bin:$PATH
+fi
+
 # JAVA home
 if [ $(uname) = "Darwin" ]; then
   export JAVA_HOME=`/usr/libexec/java_home`
@@ -20,9 +25,6 @@ if [ $(uname) = "Darwin" ]; then
 elif [ $(uname) = "Linux" ]; then
   export PATH=$JAVA_HOME:$JAVA_HOME/bin:/usr/local/go/bin:/usr/local/bin:$PATH
 fi
-
-# Homebrew
-export PATH=/opt/homebrew/bin:$PATH
 
 # My-SH
 export PATH=$MY_SH_HOME/scripts/common:$MY_SH_HOME/scripts/$MY_SH_DOMAIN:$PATH

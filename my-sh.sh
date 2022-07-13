@@ -21,6 +21,9 @@ elif [ $(uname) = "Linux" ]; then
   export PATH=$JAVA_HOME:$JAVA_HOME/bin:/usr/local/go/bin:/usr/local/bin:$PATH
 fi
 
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
 # My-SH
 export PATH=$MY_SH_HOME/scripts/common:$MY_SH_HOME/scripts/$MY_SH_DOMAIN:$PATH
 

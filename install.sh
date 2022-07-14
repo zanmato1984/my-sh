@@ -49,7 +49,7 @@ ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
 # SSH conf.
 ln -sf $PWD/ssh/$DOMAIN/config $HOME/.ssh/config
 
-# Shell plugins.
+# Link shell plugins.
 if [ $SHELL = "bash" ]; then
   for f in `ls bash-it/common`; do
     ln -sf $PWD/bash-it/common/$f $BASH_IT/custom/$f
@@ -63,3 +63,18 @@ elif [ $SHELL = "zsh" ]; then
   rm -rf $ZSH/custom/plugins/$DOMAIN
   ln -sf $PWD/oh-my-zsh/$DOMAIN $ZSH/custom/plugins/$DOMAIN
 fi
+
+# Set theme.
+if [ $SHELL = "bash" ]; then
+  echo 'Please set bash-it theme manually.'
+elif [ $SHELL = "zsh" ]; then
+  sed -i -e "s,ZSH_THEME=\".*\",ZSH_THEME=\"random\"," $RC
+fi
+
+# Enable plugins.
+if [ $SHELL = "bash" ]; then
+  echo 'Please enable bash-it plugin manually.'
+elif [ $SHELL = "zsh" ]; then
+  sed -i -e "s,plugins=(.*),plugins=(aliases brew docker docker-compose git golang mvn common $DOMAIN)," $RC
+fi
+

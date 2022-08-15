@@ -6,7 +6,7 @@ Host zanmato1984
   HostName zanmato1984.com
 
 Host gcp
-  User zanmato
+  User zanmato1984
   HostName 35.220.183.110
 
 Host gcp-zt

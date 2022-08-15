@@ -10,7 +10,7 @@ Host gcp
   HostName 35.220.183.110
 
 Host gcp-zt
-  User zanmato
+  User zanmato1984
   HostName 172.30.1.1
 
 Host bwg

@@ -1,18 +1,6 @@
 ServerAliveInterval 120
 
 # Personal
-Host zanmato1984
-  User zanmato
-  HostName zanmato1984.com
-
-Host gcp
-  User zanmato1984
-  HostName 35.220.183.110
-
-Host gcp-zt
-  User zanmato1984
-  HostName 172.30.1.1
-
 Host bwg
   User root
   HostName 80.251.210.177
@@ -20,7 +8,7 @@ Host bwg
 
 Host bwg-zt
   User root
-  HostName 172.30.1.2
+  HostName 172.30.1.1
   Port 29237
 
 Host nerv

@@ -21,9 +21,9 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
 
 # Languages
 if [ $(uname) = "Darwin" ]; then
-  export PATH=$JAVA_HOME:$JAVA_HOME/bin:$(go env GOPATH)/bin:$(go env GOROOT)/bin:/usr/local/bin:$PATH
+  export PATH=$JAVA_HOME:$JAVA_HOME/bin:$(go env GOPATH)/bin:$(go env GOROOT)/bin:$PATH
 elif [ $(uname) = "Linux" ]; then
-  export PATH=$JAVA_HOME:$JAVA_HOME/bin:/usr/local/go/bin:/usr/local/bin:$PATH
+  export PATH=$JAVA_HOME:$JAVA_HOME/bin:$PATH
 fi
 
 # Scratch

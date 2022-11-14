@@ -5,6 +5,9 @@ if [ $(uname) = "Darwin" ]; then
   export PATH=/opt/homebrew/bin:$PATH
 fi
 
+# Conda
+export PATH=$CONDA_PREFIX/bin:$PATH
+
 # JAVA home
 if [ $(uname) = "Darwin" ]; then
   export JAVA_HOME=`/usr/libexec/java_home`

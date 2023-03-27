@@ -35,6 +35,15 @@ sed -i -e "s,source $SHELL_ENV,export MY_SH_HOME=$PWD\\${NEW_LINE}export MY_SH_S
 # Source my-sh.sh which has prerequisites of shell plugins defined in domain.
 sed -i -e "s,source $SHELL_ENV,source $PWD/my-sh.sh\\${NEW_LINE}source $SHELL_ENV," $RC
 
+# Alacritty conf.
+if [ $(uname) = "Darwin" ]; then
+  ALACRITTY_OS_YML='alacritty.darwin.yml'
+elif [ $(uname) = "Linux" ]; then
+  ALACRITTY_OS_YML='alacritty.linux.yml'
+fi
+ln -sf $PWD/alacritty/$ALACRITTY_OS_YML $HOME/.alacritty.os.yml
+ln -sf $PWD/alacritty/alacritty.yml $HOME/.alacritty.yml
+
 # Input rc.
 ln -sf $PWD/input/inputrc $HOME/.inputrc
 

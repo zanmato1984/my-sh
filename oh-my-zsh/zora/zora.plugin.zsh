@@ -112,15 +112,15 @@ function tmux-clion-cudf ()
   tmux send-keys "clion" "C-m"
 }
 
-function tmux-arra ()
+function tmux-ara ()
 {
   tmux new-session -d -s arra -n arra
-  tmux send-keys "cd $HOME/dev/arra" "C-m"
-  tmux send-keys "conda activate arra-dev" "C-m"
+  tmux send-keys "cd $HOME/dev/ara" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
 
   tmux new-window -n arrow 
   tmux send-keys "cd $HOME/dev/arrow" "C-m"
-  tmux send-keys "conda activate arra-dev" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
 
   tmux select-window -t 1
   tmux a -t arra

@@ -37,12 +37,12 @@ sed -i -e "s,source $SHELL_ENV,source $PWD/my-sh.sh\\${NEW_LINE}source $SHELL_EN
 
 # Alacritty conf.
 if [ $(uname) = "Darwin" ]; then
-  ALACRITTY_OS_YML='alacritty.darwin.yml'
+  ALACRITTY_OS_YML='alacritty.darwin.toml'
 elif [ $(uname) = "Linux" ]; then
-  ALACRITTY_OS_YML='alacritty.linux.yml'
+  ALACRITTY_OS_YML='alacritty.linux.toml'
 fi
-ln -sf $PWD/alacritty/$ALACRITTY_OS_YML $HOME/.alacritty.os.yml
-ln -sf $PWD/alacritty/alacritty.yml $HOME/.alacritty.yml
+ln -sf $PWD/alacritty/$ALACRITTY_OS_YML $HOME/.alacritty.os.toml
+ln -sf $PWD/alacritty/alacritty.toml $HOME/.alacritty.toml
 
 # Input rc.
 ln -sf $PWD/input/inputrc $HOME/.inputrc

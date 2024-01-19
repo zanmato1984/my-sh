@@ -6,7 +6,7 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 # Conda
-export PATH=$CONDA_PREFIX/bin:$PATH
+# export PATH=$CONDA_PREFIX/condabin:$PATH
 
 # JAVA home
 if [ $(uname) = "Darwin" ]; then

@@ -1,3 +1,7 @@
+import = [
+"~/.alacritty.os.toml",
+]
+
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
@@ -5,9 +9,5 @@ save_to_clipboard = true
 [mouse]
 bindings = [
 { mouse = "Right", action = "PasteSelection" },
-]
-
-import = [
-"~/.alacritty.os.toml",
 ]
 

@@ -1,0 +1,14 @@
+[keyboard]
+bindings = [
+{ key = "V", mods = "Control", action = "Paste" },
+{ key = "C", mods = "Control", action = "Copy" },
+{ key = "F", mods = "Alt", chars = "\x1bf" },
+{ key = "B", mods = "Alt", chars = "\x1bb" },
+{ key = "D", mods = "Alt", chars = "\x1bd" },
+{ key = "A", mods = "Control", chars = "\x1b[1~" },
+{ key = "E", mods = "Control", chars = "\x1b[4~" },
+{ key = "K", mods = "Control", chars = "\x1b[0K" },
+{ key = "U", mods = "Control", chars = "\x1b[1K" },
+{ key = "Back", mods = "Alt", chars = "\x1b\x7f" },
+]
+

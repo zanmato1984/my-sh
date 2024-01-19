@@ -117,12 +117,38 @@ function tmux-ara ()
   tmux new-session -d -s ara -n ara
   tmux send-keys "cd $HOME/dev/ara" "C-m"
   tmux send-keys "conda activate ara-dev" "C-m"
+  tmux split-window
+  tmux send-keys "cd $HOME/dev/ara" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
+  tmux select-pane -t 1
 
   tmux new-window -n arrow 
-  tmux send-keys "cd $HOME/dev/arrow" "C-m"
+  tmux send-keys "cd $HOME/dev/arrow/cpp" "C-m"
   tmux send-keys "conda activate ara-dev" "C-m"
+  tmux split-window
+  tmux send-keys "cd $HOME/dev/arrow/cpp" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
+  tmux select-pane -t 1
 
   tmux select-window -t 1
   tmux a -t ara
+}
+
+function tmux-arrow ()
+{
+  tmux new-session -d -s arrow -n cpp
+  tmux send-keys "cd $HOME/dev/arrow/cpp" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
+  tmux split-window
+  tmux send-keys "cd $HOME/dev/arrow/cpp" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
+  tmux select-pane -t 1
+
+  tmux new-window -n python 
+  tmux send-keys "cd $HOME/dev/arrow/python" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
+
+  tmux select-window -t 1
+  tmux a -t arrow
 }
 

@@ -58,6 +58,9 @@ ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
 # SSH conf.
 ln -sf $PWD/ssh/$DOMAIN/config $HOME/.ssh/config
 
+# Conda conf.
+ln -sf $PWD/conda/condarc $HOME/.condarc
+
 # Link shell plugins.
 if [ $SHELL = "bash" ]; then
   for f in `ls bash-it/common`; do

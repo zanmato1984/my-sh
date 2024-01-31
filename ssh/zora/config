@@ -3,7 +3,7 @@ ServerAliveInterval 120
 # Personal
 Host bwg
   User root
-  HostName 80.251.210.177
+  HostName 80.251.217.126
   Port 29237
 
 Host bwg-zt

@@ -14,10 +14,12 @@ Host bwg-zt
 Host nerv
   User zanmato
   HostName 192.168.2.1
+  Port 2122
 
 Host nerv-zt
   User zanmato
   HostName 172.30.2.1
+  Port 2122
 
 Host turing
   User zanmato

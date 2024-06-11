@@ -1,6 +1,14 @@
 function start-mysql ()
 {
-  mysql -h 127.0.0.1 -P 4000 -u root -D test
+  local port=${1:-4000}
+  if [ $# -gt 0 ]; then
+    shift
+  fi
+  local command="mysql -h 127.0.0.1 -P $port -u root --init-command \"create database if not exists test; use test\" $@"
+  if [ "$port" -eq 4000 ]; then
+     command="$command --prompt \"tidb> \""
+  fi
+  eval "$command"
 }
 
 function tmux-tiflash ()

@@ -153,8 +153,11 @@ function tmux-arrow ()
   tmux select-pane -t 1
 
   tmux new-window -n python 
+  tmux send-keys "cd $HOME/dev/arrow/cpp" "C-m"
+  tmux send-keys "conda activate pyarrow-dev" "C-m"
+  tmux split-window
   tmux send-keys "cd $HOME/dev/arrow/python" "C-m"
-  tmux send-keys "conda activate ara-dev" "C-m"
+  tmux send-keys "conda activate pyarrow-dev" "C-m"
 
   tmux select-window -t 1
   tmux a -t arrow

@@ -174,10 +174,13 @@ function flame-graph ()
     return 1
   fi
 
-  sudo rm -rf /tmp/out.stacks
-  sudo dtrace -x ustackframes=100 -n "profile-1001 /pid == \$target/ { @[ustack()] = count(); } tick-${duration}sec { exit(0); }" -o /tmp/out.stacks -p ${pid}
-  $HOME/dev/FlameGraph/stackcollapse.pl /tmp/out.stacks | $HOME/dev/FlameGraph/flamegraph.pl > /tmp/flamegraph_$process.svg
+  local stack=$(mktemp /tmp/$process.stacks.XXXXXX)
+  local svg=$(mktemp /tmp/$process.svg.XXXXXX)
 
-  open /tmp/flamegraph_$process.svg
+  sudo dtrace -x ustackframes=100 -n "profile-1001 /pid == \$target/ { @[ustack()] = count(); } tick-${duration}sec { exit(0); }" -o "$stack" -p $pid
+  $HOME/dev/FlameGraph/stackcollapse.pl "$stack" | $HOME/dev/FlameGraph/flamegraph.pl > $svg
+
+  mv $svg $svg.svg
+  open $svg.svg
 }
 

@@ -163,3 +163,21 @@ function tmux-arrow ()
   tmux a -t arrow
 }
 
+function flame-graph ()
+{
+  local process=$1
+  local duration=${2:-30}
+  local pid=$(pgrep -n "$process")
+
+  if [[ -z "$pid" ]]; then
+    echo "Error: No process found with name $process"
+    return 1
+  fi
+
+  sudo rm -rf /tmp/out.stacks
+  sudo dtrace -x ustackframes=100 -n "profile-1001 /pid == \$target/ { @[ustack()] = count(); } tick-${duration}sec { exit(0); }" -o /tmp/out.stacks -p ${pid}
+  $HOME/dev/FlameGraph/stackcollapse.pl /tmp/out.stacks | $HOME/dev/FlameGraph/flamegraph.pl > /tmp/flamegraph_$process.svg
+
+  open /tmp/flamegraph_$process.svg
+}
+

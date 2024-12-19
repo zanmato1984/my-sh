@@ -1,0 +1,8 @@
+name: pyarrow-user
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas
+  - pyarrow=18.1.0
+

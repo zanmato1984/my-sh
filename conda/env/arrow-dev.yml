@@ -1,0 +1,32 @@
+name: ara-dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - aws-sdk-cpp=1.11.68
+  - benchmark>=1.6.0
+  - boost-cpp>=1.68.0
+  - brotli
+  - bzip2
+  - c-ares
+  - cmake
+  - flatbuffers
+  - folly
+  - google-cloud-cpp>=1.34.0
+  - grpc-cpp
+  - libprotobuf
+  - libutf8proc
+  - llvm-openmp
+  - lz4-c
+  - make
+  - ninja
+  - orc
+  - pkg-config
+  - python
+  - rapidjson
+  - re2
+  - snappy
+  - thrift-cpp>=0.11.0
+  - xsimd
+  - zlib
+  - zstd

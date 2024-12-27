@@ -160,6 +160,9 @@ function tmux-arrow ()
   tmux send-keys "cd $HOME/dev/arrow/python" "C-m"
   tmux send-keys "conda activate pyarrow-dev" "C-m"
 
+  tmux new-window -n dev 
+  tmux send-keys "cd $HOME/dev/arrow/dev" "C-m"
+
   tmux select-window -t 1
   tmux a -t arrow
 }

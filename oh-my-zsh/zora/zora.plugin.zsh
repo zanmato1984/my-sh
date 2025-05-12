@@ -160,6 +160,10 @@ function tmux-arrow ()
   tmux send-keys "cd $HOME/dev/arrow/python" "C-m"
   tmux send-keys "conda activate pyarrow-dev" "C-m"
 
+  tmux new-window -n docs
+  tmux send-keys "cd $HOME/dev/arrow/docs" "C-m"
+  tmux send-keys "conda activate ara-dev" "C-m"
+
   tmux new-window -n dev 
   tmux send-keys "cd $HOME/dev/arrow/dev" "C-m"
 

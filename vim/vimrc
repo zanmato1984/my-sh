@@ -39,6 +39,9 @@ nmap gh <C-W>h
 nmap gl <C-W>l
 
 imap jj <Esc>
+
+vnoremap p "_dP
+
 map <Space> :
 
 set clipboard=unnamed

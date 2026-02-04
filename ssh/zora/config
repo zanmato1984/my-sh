@@ -6,42 +6,30 @@ Host bwg
   HostName 80.251.217.126
   Port 29237
 
-Host bwg-zt
-  User root
-  HostName 172.30.1.1
-  Port 29237
-
 Host nerv
   User zanmato
   HostName 192.168.2.1
-  Port 2122
-
-Host nerv-zt
-  User zanmato
-  HostName 172.30.2.1
   Port 2122
 
 Host turing
   User zanmato
   HostName 192.168.2.20
 
+Host bwg-zt
+  User root
+  HostName 172.30.1.1
+  Port 29237
+
+Host nerv-zt
+  User zanmato
+  HostName 172.30.2.1
+  Port 2122
+
 Host turing-zt
   User zanmato
   HostName 172.30.2.20
 
-# Company
-Host idc39
+Host melina-zt
   User zanmato
-  HostName 172.16.4.39
+  HostName 172.30.2.86
 
-Host idc42
-  User zanmato
-  HostName 172.16.4.42
-
-Host idc79
-  User zanmato
-  HostName 172.16.4.79
-
-Host idc99
-  User zanmato
-  HostName 172.16.4.99

@@ -15,9 +15,13 @@ Host turing
   User zanmato
   HostName 192.168.2.20
 
+Host lilym-ts
+  User ubuntu
+  HostName 100.64.1.20
+
 Host aws-ts
   User ubuntu
-  HostName 100.64.0.1
+  HostName 100.64.1.1
 
 Host bwg-zt
   User root

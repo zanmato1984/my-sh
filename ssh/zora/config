@@ -16,8 +16,8 @@ Host turing
   HostName 192.168.2.20
 
 Host lilym-ts
-  User ubuntu
-  HostName 100.64.1.20
+  User zanmato
+  HostName 100.64.1.2
 
 Host aws-ts
   User ubuntu
@@ -32,6 +32,10 @@ Host nerv-zt
   User zanmato
   HostName 172.30.2.1
   Port 2122
+
+Host lilym-zt
+  User zanmato
+  HostName 172.30.2.2
 
 Host turing-zt
   User zanmato

@@ -56,7 +56,7 @@ ln -sf $PWD/vim/vimrc $HOME/.vrapperrc
 ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
 
 # SSH conf.
-ln -sf $PWD/ssh/$DOMAIN/config $HOME/.ssh/config
+ln -sf $PWD/ssh/config $HOME/.ssh/config
 
 # Conda conf.
 ln -sf $PWD/conda/condarc $HOME/.condarc

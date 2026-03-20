@@ -56,10 +56,15 @@ ln -sf $PWD/vim/vimrc $HOME/.vrapperrc
 ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
 
 # SSH conf.
+mkdir -p $HOME/.ssh
 ln -sf $PWD/ssh/config $HOME/.ssh/config
 
 # Conda conf.
 ln -sf $PWD/conda/condarc $HOME/.condarc
+
+# Codex conf.
+mkdir -p $HOME/.codex
+ln -sf $PWD/codex/config.toml $HOME/.codex/config.toml
 
 # Link shell plugins.
 if [ $SHELL = "bash" ]; then

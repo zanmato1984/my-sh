@@ -11,5 +11,5 @@ export SCRATCH=/scratch
 export OPENCLAW_CONFIG_PATH="$HOME/dev/bunklaw/openclaw.json"
 
 # Hermes
-export HERMES_HOME="$HOME/dev/juan"
+export HERMES_HOME="$HOME/dev/slimherles"
 

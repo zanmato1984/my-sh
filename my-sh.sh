@@ -15,4 +15,9 @@ export BUNKLAW_PROJECT_ROOT="${BUNKLAW_PROJECT_ROOT:-${HOME}/dev/agent-work/open
 export OPENCLAW_CONFIG_PATH="${BUNKLAW_HOME}/openclaw.json"
 
 # Hermes
-export HERMES_HOME="$HOME/dev/slimherles"
+if [ "${HERMES_HOME:-}" = "$HOME/dev/slimherles" ]; then
+    HERMES_HOME="$HOME/agents/slimherles"
+fi
+export HERMES_CODE_HOME="${HERMES_CODE_HOME:-${HOME}/agents/hermes-agent}"
+export HERMES_HOME="${HERMES_HOME:-${HOME}/agents/slimherles}"
+export HERMES_PROJECT_ROOT="${HERMES_PROJECT_ROOT:-${HOME}/dev/agent-work/hermes}"

@@ -14,5 +14,10 @@ export BUNKLAW_HOME="${BUNKLAW_HOME:-${HOME}/agents/bunklaw}"
 export BUNKLAW_PROJECT_ROOT="${BUNKLAW_PROJECT_ROOT:-${HOME}/dev/agent-work/openclaw}"
 export OPENCLAW_CONFIG_PATH="${BUNKLAW_HOME}/openclaw.json"
 
+# Heavy tool data is configured locally; launchers reject unavailable storage.
+if [ -f "${MY_SH_HOME:-$HOME/my-sh}/env/tool-storage.sh" ]; then
+    . "${MY_SH_HOME:-$HOME/my-sh}/env/tool-storage.sh"
+fi
+
 # Hermes
 export HERMES_HOME="$HOME/dev/slimherles"

@@ -1,0 +1,33 @@
+#!/bin/sh
+set -eu
+
+# Installed as colima, docker and tiup symlinks in ~/.local/bin.
+. "$HOME/my-sh/env/tool-storage.sh"
+tool=${0##*/}
+fail() { printf '%s\n' "tool storage unavailable: $*; no fallback directory created" >&2; exit 72; }
+
+case "${TOOL_STORAGE_VOLUME:-}" in /*) ;; *) fail 'configure TOOL_STORAGE_VOLUME in ~/.tool-storage.env' ;; esac
+case "${TOOL_STORAGE_ROOT:-}" in "$TOOL_STORAGE_VOLUME"/*) ;; *) fail 'storage root must be inside the configured volume' ;; esac
+[ -d "$TOOL_STORAGE_VOLUME" ] && [ -d "$TOOL_STORAGE_ROOT" ] || fail 'SSD is not mounted or ToolCache is missing'
+
+# A directory left behind at the mountpoint must not masquerade as the SSD.
+device() {
+    if [ "$(uname -s)" = Darwin ]; then stat -f '%d' "$1"; else stat -c '%d' "$1"; fi
+}
+[ "$(device "$TOOL_STORAGE_VOLUME")" != "$(device "$HOME")" ] || fail 'configured volume is on the internal/home filesystem'
+[ -n "${TOOL_STORAGE_ID:-}" ] || fail 'missing storage identity'
+[ -f "$TOOL_STORAGE_ROOT/.storage-id" ] || fail 'missing SSD storage marker'
+[ "$(cat "$TOOL_STORAGE_ROOT/.storage-id")" = "$TOOL_STORAGE_ID" ] || fail 'SSD storage identity does not match'
+for directory in "$COLIMA_HOME" "$COLIMA_CACHE_HOME" "$LIMA_HOME" "$TIUP_HOME"; do
+    [ -d "$directory" ] || fail "missing $directory"
+    [ "$(device "$directory")" = "$(device "$TOOL_STORAGE_VOLUME")" ] || fail "unexpected filesystem for $directory"
+done
+
+case "$tool" in
+    colima) binary=${TOOL_COLIMA_BIN:-} ;;
+    docker) binary=${TOOL_DOCKER_BIN:-} ;;
+    tiup) binary=${TOOL_TIUP_BIN:-$HOME/.local/libexec/tiup} ;;
+    *) fail "unsupported launcher name: $tool" ;;
+esac
+[ -n "$binary" ] && [ -x "$binary" ] || fail "missing internal $tool executable"
+exec "$binary" "$@"
